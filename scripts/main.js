@@ -26,6 +26,7 @@ function init() {
     musicTheme = new Audio();
     musicTheme.setAttribute('src', SONG_MAIN);
     //musicTheme.setAttribute('preload', 'auto');
+    musicTheme.setAttribute('autoplay', 'autoplay');
     musicTheme.setAttribute('type', 'audio/mpeg');
     musicTheme.load();
     
