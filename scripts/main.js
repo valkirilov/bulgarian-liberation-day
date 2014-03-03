@@ -27,14 +27,11 @@ function init() {
     musicTheme.setAttribute('src', SONG_MAIN);
     //musicTheme.setAttribute('preload', 'auto');
     musicTheme.setAttribute('type', 'audio/mpeg');
+    musicTheme.load();
     
     musicTheme.addEventListener('canplay', function() { 
         start();
     }, false);
-    
-    musicTheme.load();
-    
-    
     
     setTimeout(function() {
        if (isStarted == false)
