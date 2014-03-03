@@ -36,7 +36,7 @@ function init() {
     
     // Prepare the nect song
     musicExtra = new Audio();
-    musicTheme.setAttribute('src', SONG_SECOND);
+    musicExtra.setAttribute('src', SONG_SECOND);
     musicExtra.load();
     
 };
