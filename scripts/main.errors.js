@@ -26,7 +26,7 @@ function init() {
     musicTheme = new Audio();
     musicTheme.setAttribute('src', SONG_MAIN);
     musicTheme.setAttribute('type', 'audio/mpeg');
-    musicTheme.hello();
+    musicTheme.load();
     
     musicTheme.addEventListener('canplay', function() { 
         start();
@@ -53,6 +53,7 @@ var gOldOnError = window.onerror;
 window.onerror = function myErrorHandler(errorMsg, url, lineNumber) {
   if (gOldOnError)
     // Call previous handler.
+    alert(lineNumber + ": " + errorMsg);
     return gOldOnError(errorMsg, url, lineNumber);
 
   // Just let default handler run.
