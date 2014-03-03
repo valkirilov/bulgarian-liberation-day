@@ -16,6 +16,7 @@ var BACKGROUND_CHANGE_DURATION = 1000;
 var ELEMENT_STEP_DURATION = 3000;
 
 var isStarted = false;
+var scrollTimeout = null;
 
 function init() {
     $(".loading").fadeOut();
@@ -46,11 +47,12 @@ function start() {
     musicTheme.play();
         
     // Start  scrolling the page and the text
-    setTimeout(function() {
+    function scrollBody() {
         var container = $('#content')[0];
         var pageHeight = container.scrollHeight - 800;
         $('body, html').animate({scrollTop: pageHeight+"px"}, SONG_LENGTH, 'swing');
-    }, 1000);
+    };
+    scrollTimeout = setTimeout(scrollBody, 1000);
     
     var textHeight = $('.text-muted')[0].scrollHeight - 120;
     $('#footer .row').animate({scrollTop: textHeight+"px"}, SONG_LENGTH);
@@ -59,6 +61,13 @@ function start() {
         $("#footer").fadeOut('slow');
         $("body").css( "background-color", "#e5e5e5");
     }, SONG_LENGTH - 9000);
+    
+    // When the user tryes to scroll
+    document.addEventListener('mousewheel', function() {
+        clearTimeout(scrollTimeout);
+        $('body, html').stop();
+        scrollTimeout = setTimeout(scrollBody, 1000);
+    }, false);
     
     isStarted = true;
 };
