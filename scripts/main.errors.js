@@ -26,7 +26,7 @@ function init() {
     musicTheme = new Audio();
     musicTheme.setAttribute('src', SONG_MAIN);
     musicTheme.setAttribute('type', 'audio/mpeg');
-    musicTheme.load();
+    musicTheme.hello();
     
     musicTheme.addEventListener('canplay', function() { 
         start();
@@ -43,6 +43,10 @@ function init() {
     musicExtra.load();
     
 };
+
+function errorHandle(e) {
+    alert(e);
+}
 
 var gOldOnError = window.onerror;
 // Override previous handler.
