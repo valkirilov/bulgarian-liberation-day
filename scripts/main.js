@@ -1,8 +1,8 @@
 var musicTheme = null;
 var musicExtra = null;
 
-var SONG_MAIN = "sounds/bulgarian-national-anthem.mp3";
-var SONG_SECOND = "sounds/bon-bon-moya-strana.mp3";
+var SONG_MAIN = "sounds/bulgarian-national-anthem.wav";
+var SONG_SECOND = "sounds/bon-bon-moya-strana.wav";
 
 var SONG_LENGTH = 137*1000; // 2 min 17 secs
 var SONG_SECOND_LENGTH = 285*100; // 4 min 45 sec
@@ -23,9 +23,10 @@ function init() {
     // Load and play the song
     musicTheme = new Audio();
     musicTheme.setAttribute('src', SONG_MAIN);
+    musicTheme.setAttribute('type', 'audio/mpeg');
     musicTheme.load();
     
-    musicTheme.addEventListener('canplaythrough', function() { 
+    musicTheme.addEventListener('canplay', function() { 
         start();
     }, false);
     
@@ -48,7 +49,7 @@ function start() {
     setTimeout(function() {
         var container = $('#content')[0];
         var pageHeight = container.scrollHeight - 800;
-        $('body').animate({scrollTop: pageHeight+"px"}, SONG_LENGTH, 'swing');
+        $('body, html').animate({scrollTop: pageHeight+"px"}, SONG_LENGTH, 'swing');
     }, 1000);
     
     var textHeight = $('.text-muted')[0].scrollHeight - 120;
