@@ -17,6 +17,7 @@ var ELEMENT_STEP_DURATION = 3000;
 
 var isStarted = false;
 var scrollTimeout = null;
+var scrollTimer = 0;
 
 function init() {
     $(".loading").fadeOut();
@@ -45,17 +46,28 @@ function init() {
 
 function start() {
     musicTheme.play();
+    
+    function tickSound() {
+        if (scrollTimer > SONG_LENGTH) {
+            return;
+        }
+        scrollTimer += 1000;   
+    }
+    setInterval(tickSound, 1000);
         
     // Start  scrolling the page and the text
     function scrollBody() {
+        if (scrollTimer > SONG_LENGTH) {
+            return;
+        }
+        
         var container = $('#content')[0];
         var pageHeight = container.scrollHeight - 800;
-        $('body, html').animate({scrollTop: pageHeight+"px"}, SONG_LENGTH, 'swing');
+        $('body, html').animate({scrollTop: pageHeight+"px"}, SONG_LENGTH-scrollTimer, 'swing');
+        
+        console.log('Scroll to there in ' + (SONG_LENGTH-scrollTimer));
     };
     scrollTimeout = setTimeout(scrollBody, 1000);
-    
-    var textHeight = $('.text-muted')[0].scrollHeight - 120;
-    $('#footer .row').animate({scrollTop: textHeight+"px"}, SONG_LENGTH);
     
     setTimeout(function() {
         $("#footer").fadeOut('slow');
