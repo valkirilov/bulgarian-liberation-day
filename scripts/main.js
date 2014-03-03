@@ -25,6 +25,7 @@ function init() {
     // Load and play the song
     musicTheme = new Audio();
     musicTheme.setAttribute('src', SONG_MAIN);
+    musicTheme.setAttribute('preload', 'auto');
     musicTheme.setAttribute('type', 'audio/mpeg');
     musicTheme.load();
     
@@ -40,6 +41,7 @@ function init() {
     // Prepare the nect song
     musicExtra = new Audio();
     musicExtra.setAttribute('src', SONG_SECOND);
+    musicExtra.setAttribute('preload', 'auto');
     musicExtra.load();
     
 };
@@ -69,6 +71,11 @@ function start() {
     };
     scrollTimeout = setTimeout(scrollBody, 1000);
     
+    // Scroll the subtitles
+    var textHeight = $('.text-muted')[0].scrollHeight - 120;
+    $('#footer .row').animate({scrollTop: textHeight+"px"}, SONG_LENGTH);
+    
+    // Hide subtitles bar when the songs finish
     setTimeout(function() {
         $("#footer").fadeOut('slow');
         $("body").css( "background-color", "#e5e5e5");
