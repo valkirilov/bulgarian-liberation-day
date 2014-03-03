@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="description" content="This is a simple gesture for Bulgarian Liberation Day (3rd March) on which we are celebrating liberation from Ottoman rule.">
+        <meta name="author" content="Valentin Kirilov">
+        <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+        
+        <title>Честит 3-ти Март!</title>
+        
+        <!-- Bootstrap core CSS -->
+        <link href="libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        
+        <!-- Custom styles for this template -->
+        <link href="styles/sticky-footer.css" rel="stylesheet">
+        
+        <!-- Just for debugging purposes. Don't actually copy this line! -->
+        <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+        
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body onload="init()">
+        
+        <div class="loading flag">
+            <div class="white"></div>
+            <div class="green"> Страницата зарежда. <br /> Моля изчакайте ...</div>
+            <div class="red"></div>
+        </div>
+    
+        <!-- Begin page content -->
+        <div id="content" class="container">
+            <div class="page-header">
+                <h1>Честит празник Българи!</h1>
+            </div>
+            
+            <p class="lead text-left">3 март е национален празник на България от 1880 година.</p>
+            <p class="lead text-left">На 3 март 1878 година в градчето Сан Стефано е подписан мирен договор между Русия и Османската империя.</p>
+            <p class="lead text-left">С него се слага край на Руско-турската освободителна война (1877-1878г.) и се възстановява Българска държава след 500-годишно османско робство.</p>
+            
+            <input type="button" class="btn btn-primary btn-lg" value="Пусни химн" onclick="playHimn()" />
+            
+            <p><img class="img img-responsive" src="images/Dqvolskoto-gurlo-2-Victoria-Ferdinandova.jpg" /></p>
+            <p><img class="img img-responsive" src="images/Baba-Vida-01-Petar-Ivankov.jpg" /></p>
+            <p><img class="img img-responsive" src="images/Buzludza-Nenko-Lazarov.jpg" /></p>
+            
+            <p><img class="img img-responsive" src="images/Dqvolskoto-gurlo-1-Victoria-Ferdinandova.jpg" /></p>
+            <p><img class="img img-responsive" src="images/Hadzhi-Dimitar-house-02-Nikolay-Rainov.jp.jpg" /></p>
+            <p><img class="img img-responsive" src="images/Belogradchik-4-Victoria-Ferdinandova.jpg" /></p>
+            
+            <p class="lead text-left">Всички живеем в тежки времена и не оценяваме това, което имаме.</p>
+            <p class="lead text-left">Не познаваме историята си, не помним успехите на народа ни...</p>
+            <p class="lead text-left">Не оценяваме свободата, която имаме и за която са се борели и жадували мнозина от предците ни, а се "хапем" ежедневно и гоним материалното.</p>
+            
+            <p><img class="img img-responsive" src="images/Hristo-Botev-house-Nenko-Lzarov.jpg" /></p>
+            <p><img class="img img-responsive" src="images/Madarski-konnik-Nenko-Lazarov.jpg" /></p>
+            <p><img class="img img-responsive" src="images/Memorial-Vasil-Levski-Nenko-Lzarov.jpg" /></p>
+            
+            <p><img class="img img-responsive" src="images/Belogradchik-2-Victoria-Ferdinandova.jpg" /></p>
+            <p><img class="img img-responsive" src="images/Shipka-01-Nenko-Lazarov.jpg" /></p>
+            <p><img class="img img-responsive" src="images/Belogradchik-1-Victoria-Ferdinandova.jpg" /></p>
+            
+            <br /><br /><br />
+            
+            <p class="lead">Нека бъдем по-добри едни към други, да забравим враждите помежду ни.</p>
+            <p class="lead">И нека почетем паметта на тези, които са загинали, за да празнуваме.</p>
+            <h1>Честит 3-ти Март, Българи!</h1>
+            
+            <br />
+            <div class="flag">
+                <div class="white"></div>
+                <div class="green"></div>
+                <div class="red"></div>
+            </div>
+            
+            <br /><br /><br />
+
+        </div>
+        <div id="extra" class="container">
+        
+            <h3>Още прекрасни кадри от нашата природа и история</h3>
+            <input type="button" class="btn btn-primary btn-lg" value="Пусни музика" onclick="nextSong()" />
+            <br /><br /><br />
+            
+            <p><img class="img img-responsive" src="images/Baba-Vida-02-Petar-Ivankov.jpg" /></p>
+            <p><img class="img img-responsive" src="images/Hadzhi-Dimitar-house-03-Nikolay-Rainov.jp.jpg" /></p>
+            <p><img class="img img-responsive" src="images/Nesebar-02-Nenko-Lazarov.jpg" /></p>
+            <p><img class="img img-responsive" src="images/Shipka-02-Nenko-Lazarov.jpg" /></p>
+            <p><img class="img img-responsive" src="images/Trigrad-Victoria-Ferdinandova.jpg" /></p>
+            <p><img class="img img-responsive" src="images/Hadzhi-Dimitar-house-01-Nikolay-Rainov.jp.jpg" /></p>
+            <p><img class="img img-responsive" src="images/Belogradchik-3-Victoria-Ferdinandova.jpg" /></p>
+            <p><img class="img img-responsive" src="images/Perperikon.jpg" /></p>
+            <p><img class="img img-responsive" src="images/Nesebar-01-Nenko-Lazarov.jpg" /></p>
+            
+            <p><img class="img img-responsive" src="images/Bulgarian-flag-Victoria-Ferdinandova.jpg" /></p>
+            <p><img class="img img-responsive" src="images/Bulgarians-Victoria-Ferdinandova.jpg" /></p>
+            <p><img class="img img-responsive" src="images/Ostavka-Victoria-Ferdinandova.jpg" /></p>
+            
+            <br /><br /><br />
+            
+            <h3>Благодарение на:</h3>
+            <p class="text-left">Този жест към родината е направен благодарение на 
+            <strong>Виктория Фердинандова</strong>,
+            <strong>Ненко Лазаров</strong>,
+            <strong>Петър Иванков</strong>,
+            <strong>Николай Райнов</strong> и
+            <strong>Елена Георгиева</strong>,
+            чиито снимки видяхте (източник <a href="http://imagesfrombulgaria.com/" target="_blank">www.imagesfrombulgaria.com</a>) и разбира се под съпровода на нашият химн написан от <strong>Цветан Радославов</strong> и любимата ни на всички българи <strong>Моя страна</strong> на <strong>Емил Димитров</strong> изпълнена от децата от Бон Бон.</p>
+            
+            <br />
+            
+        </div>
+        
+        <div id="footer">
+            <div class="row">
+                <div class="col-xs-12 text-muted">
+                    <br /><br /><br />
+                    Горда Стара планина, <br />
+                    до ней Дунава синей, <br />
+                    слънце Тракия огрява, <br />
+                    над Пирина пламеней. <br />
+                    
+                    Мила Родино, <br />
+                    ти си земен рай, <br />
+                    твойта хубост, твойта прелест, <br />
+                    ах, те нямат край. <br />
+                    
+                    Мила Родино, <br />
+                    ти си земен рай, <br />
+                    твойта хубост, твойта прелест, <br />
+                    ах, те нямат край. <br />
+                    <br /><br /><br />
+                </div>
+            </div>
+        </div>
+        
+        
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="scripts/main.js"></script>
+    </body>
+</html>
