@@ -21,7 +21,9 @@ function init() {
     $(".loading").fadeOut();
     
     // Load and play the song
-    musicTheme = new Audio(SONG_MAIN);
+    musicTheme = new Audio();
+    musicTheme.setAttribute('src', SONG_MAIN);
+    musicTheme.load();
     
     musicTheme.addEventListener('canplaythrough', function() { 
         start();
@@ -33,7 +35,8 @@ function init() {
     }, 3000);
     
     // Prepare the nect song
-    musicExtra = new Audio(SONG_SECOND);
+    musicExtra = new Audio();
+    musicTheme.setAttribute('src', SONG_SECOND);
     musicExtra.load();
     
 };
