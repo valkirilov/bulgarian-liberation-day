@@ -25,13 +25,16 @@ function init() {
     // Load and play the song
     musicTheme = new Audio();
     musicTheme.setAttribute('src', SONG_MAIN);
-    musicTheme.setAttribute('preload', 'auto');
+    //musicTheme.setAttribute('preload', 'auto');
     musicTheme.setAttribute('type', 'audio/mpeg');
-    musicTheme.load();
     
     musicTheme.addEventListener('canplay', function() { 
         start();
     }, false);
+    
+    musicTheme.load();
+    
+    
     
     setTimeout(function() {
        if (isStarted == false)
@@ -41,7 +44,7 @@ function init() {
     // Prepare the nect song
     musicExtra = new Audio();
     musicExtra.setAttribute('src', SONG_SECOND);
-    musicExtra.setAttribute('preload', 'auto');
+    //musicExtra.setAttribute('preload', 'auto');
     musicExtra.load();
     
 };
